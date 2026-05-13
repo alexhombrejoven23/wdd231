@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Paz Chamber of Commerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ 
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-icon">🏔</div>
+        <div class="brand-name">La Paz<br>Chamber of Commerce</div>
+      </div>
+ 
+      <nav id="main-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html">Join</a>
+        <a href="discover.html">Discover</a>
+      </nav>
+ 
+      <div class="nav-controls">
+        <button id="theme-btn" aria-label="Toggle theme">☀</button>
+        <button id="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-placeholder">
+        
+      <span>🏔</span>
+      <p class="hero-label">La Paz, Bolivia</p>
+    </div>
+    <button class="hero-cta">Keynote Tickets</button>
+  </section>
+ 
+  <!-- MAIN -->
+  <main>
+    <h1>Home</h1>
+ 
+    <!-- Info row: Events + Weather -->
+    <div class="info-grid">
+ 
+      <!-- Events -->
+      <div class="card">
+        <div class="card-header">Events</div>
+        <div class="card-body">
+          <ul class="events-list">
+            <li class="event-item">
+              <div class="event-date">15<br>MAY</div>
+              <div>
+                <div class="event-title">La Paz Business Expo 2025</div>
+                <div class="event-time">9:00 am &ndash; Hotel Los Tajibos</div>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-date">22<br>MAY</div>
+              <div>
+                <div class="event-title">Workshop: Digital Marketing for Small Business</div>
+                <div class="event-time">3:00 pm &ndash; Chamber Main Office</div>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-date">05<br>JUN</div>
+              <div>
+                <div class="event-title">Business Networking Night &ndash; June Edition</div>
+                <div class="event-time">6:30 pm &ndash; Zona Sur, La Paz</div>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-date">18<br>JUN</div>
+              <div>
+                <div class="event-title">Innovation &amp; Entrepreneurship Summit</div>
+                <div class="event-time">8:30 am &ndash; Convention Center</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+ 
+      <!-- Current Weather -->
+      <div class="card">
+        <div class="card-header">Current Weather</div>
+        <div class="card-body">
+          <div class="weather-icon" id="weather-icon">⛅</div>
+          <div class="weather-temp" id="weather-temp">12° C</div>
+          <div class="weather-desc" id="weather-desc">Partly Cloudy</div>
+          <ul class="weather-details" id="weather-details">
+            <li>High: <strong>14°C</strong></li>
+            <li>Low: <strong>4°C</strong></li>
+            <li>Humidity: <strong>72%</strong></li>
+            <li>Sunrise: <strong>6:20 am</strong></li>
+            <li>Sunset: <strong>6:05 pm</strong></li>
+          </ul>
+        </div>
+      </div>
+ 
+      <!-- Weather Forecast -->
+      <div class="card">
+        <div class="card-header">Weather Forecast</div>
+        <div class="card-body">
+          <ul class="forecast-list" id="forecast-list">
+            <li class="forecast-item"><span class="day">Today</span>     <span class="temp">14°C</span></li>
+            <li class="forecast-item"><span class="day">Wednesday</span> <span class="temp">13°C</span></li>
+            <li class="forecast-item"><span class="day">Thursday</span>  <span class="temp">11°C</span></li>
+            <li class="forecast-item"><span class="day">Friday</span>    <span class="temp">15°C</span></li>
+            <li class="forecast-item"><span class="day">Saturday</span>  <span class="temp">16°C</span></li>
+          </ul>
+        </div>
+      </div>
+ 
+    </div><!-- /info-grid -->
+ 
+    <!-- Spotlight member businesses -->
+    <div class="business-grid">
+ 
+      <div class="biz-card">
+        <h3>Los Andes Restaurant</h3>
+        <p class="biz-tagline">Authentic flavors since 1998</p>
+        <div class="biz-content">
+          <div class="biz-img-placeholder">🍽</div>
+          <div class="biz-info">
+            <strong>EMAIL:</strong> info@losandes.bo<br>
+            <strong>PHONE:</strong> (591-2) 244-5566<br>
+            <strong>URL:</strong> <a href="#">losandes.bo</a>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="biz-card">
+        <h3>Tech Bolivia LLC</h3>
+        <p class="biz-tagline">Enterprise technology solutions</p>
+        <div class="biz-content">
+          <div class="biz-img-placeholder">💻</div>
+          <div class="biz-info">
+            <strong>EMAIL:</strong> contact@techbolivia.com<br>
+            <strong>PHONE:</strong> (591-2) 277-8899<br>
+            <strong>URL:</strong> <a href="#">techbolivia.com</a>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="biz-card">
+        <h3>Illimani Boutique</h3>
+        <p class="biz-tagline">Bolivian fashion &amp; handcrafts</p>
+        <div class="biz-content">
+          <div class="biz-img-placeholder">👗</div>
+          <div class="biz-info">
+            <strong>EMAIL:</strong> sales@illimani.bo<br>
+            <strong>PHONE:</strong> (591-2) 211-3344<br>
+            <strong>URL:</strong> <a href="#">illimani.bo</a>
+          </div>
+        </div>
+      </div>
+ 
+    </div><!-- /business-grid -->
+ 
+  </main>
+ 
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+ 
+      <div class="footer-contact">
+        <strong>La Paz Chamber of Commerce</strong>
+        <p>
+          Av. Mariscal Santa Cruz 1392<br>
+          La Paz, Bolivia<br>
+          info@lapazcc.org<br>
+          (591-2) 237-8900
+        </p>
+      </div>
+ 
+      <div class="social-links">
+        <a href="#" aria-label="YouTube">&#9654;</a>
+        <a href="#" aria-label="Twitter">&#120143;</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+ 
+      <div class="footer-meta">
+        WDD231 Class Project<br>
+        Alex CondorI Molle<br>
+        &copy; 2025 La Paz Chamber of Commerce<br>
+        Last Modified: <span id="last-mod"></span>
+      </div>
+ 
+    </div>
+  </footer>
+ 
+  <script src="scripts.js"></script>
+</body>
+</html>
