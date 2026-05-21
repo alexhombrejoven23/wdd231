@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Directorio de miembros de la Cámara de Comercio e Industria de Potosí, Bolivia. Encuentra empresas locales y conoce nuestros miembros." />
+  <meta name="author" content="Alex Condori Molle" />
+  <title>Directorio de Miembros | Cámara de Comercio de Potosí</title>
+
+  <meta property="og:title" content="Directorio de Miembros | Cámara de Comercio de Potosí" />
+  <meta property="og:description" content="Directorio oficial de empresas miembros de la Cámara de Comercio e Industria de Potosí, Bolivia." />
+  <meta property="og:image" content="https://alexcm.github.io/wdd231/chamber/images/og-image.jpg" />
+  <meta property="og:url" content="https://alexcm.github.io/wdd231/chamber/directory.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/small.css" />
+  <link rel="stylesheet" href="css/larger.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-icon">⛏</div>
+        <div class="brand-name">Cámara de Comercio<br><span style="font-size:0.8rem;font-weight:400;">Potosí, Bolivia</span></div>
+      </div>
+
+      <nav id="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="directory.html" class="active">Directorio</a>
+        <a href="join.html">Únete</a>
+        <a href="discover.html">Descubre</a>
+      </nav>
+
+      <div class="nav-controls">
+        <button id="theme-btn" aria-label="Cambiar tema">🌙</button>
+        <button id="menu-btn" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1>Directorio de Miembros</h1>
+
+    <div class="view-controls">
+      <button id="grid-btn" class="view-btn active" aria-label="Vista en cuadrícula">
+        ⊞ Cuadrícula
+      </button>
+      <button id="list-btn" class="view-btn" aria-label="Vista en lista">
+        ☰ Lista
+      </button>
+    </div>
+
+    <div id="members-container" class="grid-view"></div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-contact">
+        <strong>Cámara de Comercio e Industria de Potosí</strong>
+        <p>Plaza 6 de Agosto #23, Potosí, Bolivia</p>
+        <p>📞 +591 2 622-4455</p>
+        <p>✉ info@camarapotosi.bo</p>
+      </div>
+
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+
+      <div class="footer-meta">
+        <p>Alex Condori Molle</p>
+        <p>WDD 231</p>
+        <p>© <span id="copy-year"></span> Cámara de Comercio de Potosí</p>
+        <p>Última modificación: <span id="last-mod"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/directory.js"></script>
+</body>
+</html>

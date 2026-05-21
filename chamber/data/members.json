@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Minería Andes S.R.L.",
+    "address": "Av. Villazón #450, Potosí",
+    "phone": "+591 2 622-1100",
+    "website": "https://mineriaandes.bo",
+    "image": "mineria-andes.jpg",
+    "membershipLevel": 3,
+    "description": "Empresa líder en exploración y extracción de minerales en el departamento de Potosí."
+  },
+  {
+    "name": "Hotel Cerro Rico",
+    "address": "Calle Hoyes #8, Potosí",
+    "phone": "+591 2 622-3344",
+    "website": "https://hotelcerrorico.bo",
+    "image": "hotel-cerro-rico.jpg",
+    "membershipLevel": 3,
+    "description": "Hotel de lujo con vista al histórico Cerro Rico, ofreciendo confort y tradición boliviana."
+  },
+  {
+    "name": "Artesanías Potosinas",
+    "address": "Plaza 10 de Noviembre #15, Potosí",
+    "phone": "+591 2 622-5566",
+    "website": "https://artesaniaspotosinas.bo",
+    "image": "artesanias.png",
+    "membershipLevel": 2,
+    "description": "Tienda especializada en artesanías auténticas de plata y tejidos tradicionales potosinos."
+  },
+  {
+    "name": "Restaurante La Casa de la Moneda",
+    "address": "Calle Ayacucho #12, Potosí",
+    "phone": "+591 2 622-7788",
+    "website": "https://casadelamoneda-rest.bo",
+    "image": "restaurante-casa-moneda.jpg",
+    "membershipLevel": 2,
+    "description": "Gastronomía típica boliviana en un ambiente histórico colonial en el corazón de Potosí."
+  },
+  {
+    "name": "Farmacia San Bartolomé",
+    "address": "Av. Serrudo #230, Potosí",
+    "phone": "+591 2 622-9900",
+    "website": "https://farmaciasanbartolome.bo",
+    "image": "farmacia-san-bartolome.jpg",
+    "membershipLevel": 1,
+    "description": "Farmacia de barrio con más de 30 años de servicio a la comunidad potosina."
+  },
+  {
+    "name": "Transporte Altiplano",
+    "address": "Terminal de Buses, Potosí",
+    "phone": "+591 2 623-1122",
+    "website": "https://transportealtiplano.bo",
+    "image": "transporte-altiplano.jpg",
+    "membershipLevel": 2,
+    "description": "Empresa de transporte interprovincial con rutas hacia Sucre, Oruro y La Paz."
+  },
+  {
+    "name": "Constructora Potosí",
+    "address": "Barrio Universitario #78, Potosí",
+    "phone": "+591 2 623-3344",
+    "website": "https://constructorapotosi.bo",
+    "image": "constructora-potosi.jpg",
+    "membershipLevel": 3,
+    "description": "Empresa constructora especializada en obras civiles y proyectos de infraestructura en el altiplano."
+  },
+  {
+    "name": "Supermercado El Condor",
+    "address": "Av. Antofagasta #310, Potosí",
+    "phone": "+591 2 623-5566",
+    "website": "https://supermercadocondor.bo",
+    "image": "supermercado-condor.jpg",
+    "membershipLevel": 1,
+    "description": "Supermercado familiar con amplia variedad de productos locales e importados a precios competitivos."
+  }
+]
