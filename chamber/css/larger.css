@@ -72,3 +72,44 @@
     font-size: 0.85rem;
   }
 }
+
+@media (min-width: 640px) {
+  .hero-bg {
+    height: 380px;
+  }
+ 
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+ 
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+ 
+  .weather-section {
+    grid-template-columns: 1fr 1fr;
+  }
+ 
+  .spotlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+ 
+@media (min-width: 900px) {
+  .hero-bg {
+    height: 460px;
+  }
+ 
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+ 
+  .spotlights-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+ 
+  .home-section.weather-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+ 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cámara de Comercio e Industria de Potosí, Bolivia. Fomentando el desarrollo económico y empresarial de la ciudad más alta del mundo." />
+  <meta name="author" content="Alex Condori Molle" />
+  <title>Inicio | Cámara de Comercio de Potosí</title>
+
+  <meta property="og:title" content="Cámara de Comercio e Industria de Potosí" />
+  <meta property="og:description" content="Fomentando el desarrollo económico y empresarial de Potosí, Bolivia." />
+  <meta property="og:image" content="https://alexcm.github.io/wdd231/chamber/images/og-image.jpg" />
+  <meta property="og:url" content="https://alexcm.github.io/wdd231/chamber/index.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/small.css" />
+  <link rel="stylesheet" href="css/larger.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-icon">⛏</div>
+        <div class="brand-name">Cámara de Comercio<br><span style="font-size:0.8rem;font-weight:400;">Potosí, Bolivia</span></div>
+      </div>
+
+      <nav id="main-nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="directory.html">Directorio</a>
+        <a href="join.html">Únete</a>
+        <a href="discover.html">Descubre</a>
+      </nav>
+
+      <div class="nav-controls">
+        <button id="theme-btn" aria-label="Cambiar tema">🌙</button>
+        <button id="menu-btn" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/hero-potosi.jpg" alt="Vista panorámica de Potosí con el Cerro Rico al fondo" onerror="this.parentElement.classList.add('hero-fallback')" />
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Bienvenido a Potosí</h1>
+          <p>La ciudad que cambió al mundo. Únete a la red empresarial más importante del altiplano boliviano.</p>
+          <a href="join.html" class="hero-cta-btn">Únete a la Cámara</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="home-main">
+
+    <section class="home-section weather-section">
+      <div class="section-card" id="current-weather">
+        <div class="card-header">🌤 Clima Actual – Potosí</div>
+        <div class="card-body weather-body">
+          <div class="weather-icon" id="weather-icon">⏳</div>
+          <div>
+            <div class="weather-temp" id="weather-temp">Cargando...</div>
+            <div class="weather-desc" id="weather-desc"></div>
+            <ul class="weather-details">
+              <li id="weather-humidity"></li>
+              <li id="weather-wind"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card" id="forecast-card">
+        <div class="card-header">📅 Pronóstico 3 días</div>
+        <div class="card-body">
+          <ul class="forecast-list" id="forecast-list">
+            <li class="forecast-item"><span class="day">Cargando...</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-card full-width">
+        <div class="card-header">📢 Eventos Actuales</div>
+        <div class="card-body">
+          <ul class="events-list">
+            <li class="event-item">
+              <div class="event-date"><span>12</span>JUN</div>
+              <div>
+                <div class="event-title">Feria de Emprendimiento Potosino</div>
+                <div class="event-time">9:00 AM – Plaza 6 de Agosto</div>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-date"><span>18</span>JUN</div>
+              <div>
+                <div class="event-title">Reunión Mensual de Miembros</div>
+                <div class="event-time">7:00 PM – Sede de la Cámara</div>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-date"><span>25</span>JUN</div>
+              <div>
+                <div class="event-title">Taller: Exportación de Minerales</div>
+                <div class="event-time">10:00 AM – Centro de Convenciones</div>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-date"><span>02</span>JUL</div>
+              <div>
+                <div class="event-title">Aniversario de la Cámara de Comercio</div>
+                <div class="event-time">6:00 PM – Hotel Cerro Rico</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <h2 class="section-title">⭐ Empresas Destacadas</h2>
+      <div id="spotlights-container" class="spotlights-grid"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-contact">
+        <strong>Cámara de Comercio e Industria de Potosí</strong>
+        <p>Plaza 6 de Agosto #23, Potosí, Bolivia</p>
+        <p>📞 +591 2 622-4455</p>
+        <p>✉ info@camarapotosi.bo</p>
+      </div>
+
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+
+      <div class="footer-meta">
+        <p>Alex Condori Molle</p>
+        <p>WDD 231</p>
+        <p>© <span id="copy-year"></span> Cámara de Comercio de Potosí</p>
+        <p>Última modificación: <span id="last-mod"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/index.js"></script>
+</body>
+</html>
