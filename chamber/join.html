@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Únete a la Cámara de Comercio e Industria de Potosí. Completa el formulario de membresía y forma parte de la red empresarial más importante del altiplano boliviano." />
+  <meta name="description" content="Join the Potosí Chamber of Commerce and Industry. Fill out the membership application and become part of the most important business network in the Bolivian altiplano." />
   <meta name="author" content="Alex Condori Molle" />
-  <title>Únete | Cámara de Comercio de Potosí</title>
+  <title>Join | Potosí Chamber of Commerce</title>
 
-  <meta property="og:title" content="Únete a la Cámara de Comercio de Potosí" />
-  <meta property="og:description" content="Forma parte de la red empresarial más importante del altiplano boliviano." />
+  <meta property="og:title" content="Join the Potosí Chamber of Commerce" />
+  <meta property="og:description" content="Become part of the most important business network in the Bolivian altiplano." />
   <meta property="og:image" content="https://alexcm.github.io/wdd231/chamber/images/og-image.jpg" />
   <meta property="og:url" content="https://alexcm.github.io/wdd231/chamber/join.html" />
   <meta property="og:type" content="website" />
 
   <link rel="icon" type="image/png" href="images/favicon.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/small.css" />
   <link rel="stylesheet" href="css/larger.css" />
@@ -29,26 +27,25 @@
     <div class="nav-inner">
       <div class="brand">
         <div class="brand-icon">⛏</div>
-        <div class="brand-name">Cámara de Comercio<br><span style="font-size:0.8rem;font-weight:400;">Potosí, Bolivia</span></div>
+        <div class="brand-name">Chamber of Commerce<br><span style="font-size:0.8rem;font-weight:400;">Potosí, Bolivia</span></div>
       </div>
       <nav id="main-nav">
-        <a href="index.html">Inicio</a>
-        <a href="directory.html">Directorio</a>
-        <a href="join.html" class="active">Únete</a>
-        <a href="discover.html">Descubre</a>
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html" class="active">Join</a>
+        <a href="discover.html">Discover</a>
       </nav>
       <div class="nav-controls">
-        <button id="theme-btn" aria-label="Cambiar tema">🌙</button>
-        <button id="menu-btn" aria-label="Abrir menú">☰</button>
+        <button id="theme-btn" aria-label="Toggle theme">🌙</button>
+        <button id="menu-btn" aria-label="Open menu">☰</button>
       </div>
     </div>
   </header>
 
   <main class="join-main">
-
     <div class="join-header">
-      <h1>Solicitud de Membresía</h1>
-      <p>Completa el formulario y un representante de la cámara se pondrá en contacto contigo en un plazo de 48 horas.</p>
+      <h1>Membership Application</h1>
+      <p>Fill out the form below and a chamber representative will contact you within 48 hours.</p>
     </div>
 
     <div class="join-layout">
@@ -57,215 +54,175 @@
         <form id="join-form" method="get" action="thankyou.html" novalidate>
 
           <label for="first-name">
-            Nombre <span class="required">*</span>
-            <input
-              type="text"
-              id="first-name"
-              name="firstName"
-              title="Ingresa tu nombre"
-              autocomplete="given-name"
-              placeholder="Ej: Alex"
-              required
-            />
+            First Name <span class="required">*</span>
+            <input type="text" id="first-name" name="firstName"
+              title="Enter your first name" autocomplete="given-name"
+              placeholder="e.g. Alex" required />
           </label>
 
           <label for="last-name">
-            Apellido <span class="required">*</span>
-            <input
-              type="text"
-              id="last-name"
-              name="lastName"
-              title="Ingresa tu apellido"
-              autocomplete="family-name"
-              placeholder="Ej: Condori"
-              required
-            />
+            Last Name <span class="required">*</span>
+            <input type="text" id="last-name" name="lastName"
+              title="Enter your last name" autocomplete="family-name"
+              placeholder="e.g. Condori" required />
           </label>
 
           <label for="org-title">
-            Cargo en la organización
-            <input
-              type="text"
-              id="org-title"
-              name="orgTitle"
-              title="Mínimo 7 caracteres, solo letras, guiones y espacios"
+            Organizational Title
+            <input type="text" id="org-title" name="orgTitle"
+              title="Minimum 7 characters, letters, hyphens and spaces only"
               autocomplete="organization-title"
-              placeholder="Ej: Gerente General"
-              pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\- ]{7,}"
-            />
-            <span class="field-hint">Mínimo 7 caracteres, solo letras, guiones y espacios</span>
+              placeholder="e.g. General Manager"
+              pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\- ]{7,}" />
+            <span class="field-hint">Minimum 7 characters, letters, hyphens and spaces only</span>
           </label>
 
           <label for="email">
-            Correo electrónico <span class="required">*</span>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              title="Ingresa un correo electrónico válido"
-              autocomplete="email"
-              placeholder="ejemplo@tuempresa.com"
-              required
-            />
+            Email Address <span class="required">*</span>
+            <input type="email" id="email" name="email"
+              title="Enter a valid email address" autocomplete="email"
+              placeholder="example@yourcompany.com" required />
           </label>
 
           <label for="phone">
-            Teléfono móvil <span class="required">*</span>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              title="Ingresa tu número de teléfono móvil"
-              autocomplete="tel"
-              placeholder="+591 7XXXXXXX"
-              required
-            />
+            Mobile Phone <span class="required">*</span>
+            <input type="tel" id="phone" name="phone"
+              title="Enter your mobile phone number" autocomplete="tel"
+              placeholder="+591 7XXXXXXX" required />
           </label>
 
           <label for="org-name">
-            Nombre de la empresa <span class="required">*</span>
-            <input
-              type="text"
-              id="org-name"
-              name="orgName"
-              title="Ingresa el nombre de tu empresa u organización"
+            Business / Organization Name <span class="required">*</span>
+            <input type="text" id="org-name" name="orgName"
+              title="Enter your business or organization name"
               autocomplete="organization"
-              placeholder="Ej: Minería Andes S.R.L."
-              required
-            />
+              placeholder="e.g. Andes Mining S.R.L." required />
           </label>
 
           <label for="membership">
-            Nivel de membresía <span class="required">*</span>
-            <select id="membership" name="membership" title="Selecciona el nivel de membresía" required>
-              <option value="" disabled selected>-- Selecciona un nivel --</option>
-              <option value="np">NP – Sin costo (organizaciones sin fines de lucro)</option>
-              <option value="bronze">Bronce</option>
-              <option value="silver">Plata</option>
-              <option value="gold">Oro</option>
+            Membership Level <span class="required">*</span>
+            <select id="membership" name="membership" title="Select a membership level" required>
+              <option value="" disabled selected>-- Select a level --</option>
+              <option value="np">NP Membership – No fee (non-profit organizations)</option>
+              <option value="bronze">Bronze Membership</option>
+              <option value="silver">Silver Membership</option>
+              <option value="gold">Gold Membership</option>
             </select>
           </label>
 
           <label for="description">
-            Descripción de tu empresa
-            <textarea
-              id="description"
-              name="description"
-              title="Describe brevemente tu empresa u organización"
-              rows="4"
-              placeholder="Cuéntanos a qué se dedica tu empresa..."
-            ></textarea>
+            Business Description
+            <textarea id="description" name="description"
+              title="Briefly describe your business or organization"
+              rows="4" placeholder="Tell us what your business does..."></textarea>
           </label>
 
           <input type="hidden" id="timestamp" name="timestamp" />
-
-          <input type="submit" value="Enviar solicitud" class="submit-btn" />
+          <input type="submit" value="Submit Application" class="submit-btn" />
         </form>
       </section>
 
       <aside class="membership-cards">
-        <h2>Niveles de membresía</h2>
+        <h2>Membership Levels</h2>
 
         <div class="mem-card mem-np">
           <div class="mem-icon">🤝</div>
-          <h3>NP – Sin costo</h3>
-          <p>Para organizaciones sin fines de lucro</p>
-          <button class="mem-info-btn" data-modal="modal-np">Ver beneficios</button>
+          <h3>NP – No Fee</h3>
+          <p>For non-profit organizations</p>
+          <button class="mem-info-btn" data-modal="modal-np">View Benefits</button>
         </div>
 
         <div class="mem-card mem-bronze">
           <div class="mem-icon">🥉</div>
-          <h3>Bronce</h3>
-          <p>Ideal para pequeñas empresas</p>
-          <button class="mem-info-btn" data-modal="modal-bronze">Ver beneficios</button>
+          <h3>Bronze</h3>
+          <p>Ideal for small businesses</p>
+          <button class="mem-info-btn" data-modal="modal-bronze">View Benefits</button>
         </div>
 
         <div class="mem-card mem-silver">
           <div class="mem-icon">🥈</div>
-          <h3>Plata</h3>
-          <p>Para empresas en crecimiento</p>
-          <button class="mem-info-btn" data-modal="modal-silver">Ver beneficios</button>
+          <h3>Silver</h3>
+          <p>For growing businesses</p>
+          <button class="mem-info-btn" data-modal="modal-silver">View Benefits</button>
         </div>
 
         <div class="mem-card mem-gold">
           <div class="mem-icon">🥇</div>
-          <h3>Oro</h3>
-          <p>Máxima visibilidad y beneficios</p>
-          <button class="mem-info-btn" data-modal="modal-gold">Ver beneficios</button>
+          <h3>Gold</h3>
+          <p>Maximum visibility and benefits</p>
+          <button class="mem-info-btn" data-modal="modal-gold">View Benefits</button>
         </div>
       </aside>
 
-    </div><!-- /join-layout -->
+    </div>
   </main>
 
-  <!-- MODALES -->
   <dialog id="modal-np" class="mem-modal">
     <div class="modal-inner">
-      <h2>🤝 Membresía NP – Sin costo</h2>
-      <p class="modal-price">Gratuita · Organizaciones sin fines de lucro</p>
+      <h2>🤝 NP Membership – No Fee</h2>
+      <p class="modal-price">Free · Non-profit organizations only</p>
       <ul>
-        <li>✅ Listado en el directorio de miembros</li>
-        <li>✅ Acceso a eventos informativos</li>
-        <li>✅ Boletín mensual de la cámara</li>
-        <li>✅ Red de contactos empresariales</li>
+        <li>✅ Listed in the member directory</li>
+        <li>✅ Access to informational events</li>
+        <li>✅ Monthly chamber newsletter</li>
+        <li>✅ Business networking opportunities</li>
       </ul>
-      <button class="modal-close-btn" data-close="modal-np">Cerrar</button>
+      <button class="modal-close-btn" data-close="modal-np">Close</button>
     </div>
   </dialog>
 
   <dialog id="modal-bronze" class="mem-modal">
     <div class="modal-inner">
-      <h2>🥉 Membresía Bronce</h2>
-      <p class="modal-price">Bs. 500 / año</p>
+      <h2>🥉 Bronze Membership</h2>
+      <p class="modal-price">Bs. 500 / year</p>
       <ul>
-        <li>✅ Todo lo incluido en NP</li>
-        <li>✅ Descuento del 10% en eventos</li>
-        <li>✅ Perfil básico en el directorio</li>
-        <li>✅ 1 publicación mensual en redes sociales</li>
-        <li>✅ Certificado de membresía</li>
+        <li>✅ Everything in NP</li>
+        <li>✅ 10% discount on chamber events</li>
+        <li>✅ Basic profile in the directory</li>
+        <li>✅ 1 social media post per month</li>
+        <li>✅ Official membership certificate</li>
       </ul>
-      <button class="modal-close-btn" data-close="modal-bronze">Cerrar</button>
+      <button class="modal-close-btn" data-close="modal-bronze">Close</button>
     </div>
   </dialog>
 
   <dialog id="modal-silver" class="mem-modal">
     <div class="modal-inner">
-      <h2>🥈 Membresía Plata</h2>
-      <p class="modal-price">Bs. 1.200 / año</p>
+      <h2>🥈 Silver Membership</h2>
+      <p class="modal-price">Bs. 1,200 / year</p>
       <ul>
-        <li>✅ Todo lo incluido en Bronce</li>
-        <li>✅ Descuento del 20% en eventos</li>
-        <li>✅ Perfil destacado en el directorio</li>
-        <li>✅ Aparición en sección Spotlight de la web</li>
-        <li>✅ Acceso a talleres de capacitación</li>
-        <li>✅ 3 publicaciones mensuales en redes sociales</li>
+        <li>✅ Everything in Bronze</li>
+        <li>✅ 20% discount on chamber events</li>
+        <li>✅ Featured profile in the directory</li>
+        <li>✅ Spotlight placement on the homepage</li>
+        <li>✅ Access to training workshops</li>
+        <li>✅ 3 social media posts per month</li>
       </ul>
-      <button class="modal-close-btn" data-close="modal-silver">Cerrar</button>
+      <button class="modal-close-btn" data-close="modal-silver">Close</button>
     </div>
   </dialog>
 
   <dialog id="modal-gold" class="mem-modal">
     <div class="modal-inner">
-      <h2>🥇 Membresía Oro</h2>
-      <p class="modal-price">Bs. 2.500 / año</p>
+      <h2>🥇 Gold Membership</h2>
+      <p class="modal-price">Bs. 2,500 / year</p>
       <ul>
-        <li>✅ Todo lo incluido en Plata</li>
-        <li>✅ Descuento del 35% en todos los eventos</li>
-        <li>✅ Posición prioritaria en el directorio</li>
-        <li>✅ Spotlight garantizado en la página principal</li>
-        <li>✅ Logo en materiales oficiales de la cámara</li>
-        <li>✅ Reunión trimestral con directivos</li>
-        <li>✅ Publicaciones ilimitadas en redes sociales</li>
+        <li>✅ Everything in Silver</li>
+        <li>✅ 35% discount on all events</li>
+        <li>✅ Priority placement in the directory</li>
+        <li>✅ Guaranteed spotlight on the homepage</li>
+        <li>✅ Logo on official chamber materials</li>
+        <li>✅ Quarterly meeting with board members</li>
+        <li>✅ Unlimited social media posts</li>
       </ul>
-      <button class="modal-close-btn" data-close="modal-gold">Cerrar</button>
+      <button class="modal-close-btn" data-close="modal-gold">Close</button>
     </div>
   </dialog>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-contact">
-        <strong>Cámara de Comercio e Industria de Potosí</strong>
+        <strong>Potosí Chamber of Commerce and Industry</strong>
         <p>Plaza 6 de Agosto #23, Potosí, Bolivia</p>
         <p>📞 +591 2 622-4455</p>
         <p>✉ info@camarapotosi.bo</p>
@@ -278,8 +235,8 @@
       <div class="footer-meta">
         <p>Alex Condori Molle</p>
         <p>WDD 231</p>
-        <p>© <span id="copy-year"></span> Cámara de Comercio de Potosí</p>
-        <p>Última modificación: <span id="last-mod"></span></p>
+        <p>© <span id="copy-year"></span> Potosí Chamber of Commerce</p>
+        <p>Last modified: <span id="last-mod"></span></p>
       </div>
     </div>
   </footer>

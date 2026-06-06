@@ -26,7 +26,7 @@ menuBtn.addEventListener('click', () => {
 
 const timestampField = document.getElementById('timestamp');
 const now = new Date();
-timestampField.value = now.toLocaleString('es-BO', {
+timestampField.value = now.toLocaleString('en-US', {
   year: 'numeric',
   month: '2-digit',
   day: '2-digit',
@@ -40,16 +40,14 @@ const closeButtons = document.querySelectorAll('.modal-close-btn');
 
 infoButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    const modalId = btn.getAttribute('data-modal');
-    const modal = document.getElementById(modalId);
+    const modal = document.getElementById(btn.getAttribute('data-modal'));
     if (modal) modal.showModal();
   });
 });
 
 closeButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    const modalId = btn.getAttribute('data-close');
-    const modal = document.getElementById(modalId);
+    const modal = document.getElementById(btn.getAttribute('data-close'));
     if (modal) modal.close();
   });
 });

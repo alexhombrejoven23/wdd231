@@ -24,39 +24,36 @@ menuBtn.addEventListener('click', () => {
   menuBtn.textContent = mainNav.classList.contains('open') ? '✕' : '☰';
 });
 
-const params = new URLSearchParams(window.location.search);
+const timestampField = document.getElementById('timestamp');
+const now = new Date();
+timestampField.value = now.toLocaleString('en-US', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit'
+});
 
-const membershipLabels = {
-  np:     '🤝 NP – Sin costo',
-  bronze: '🥉 Bronce',
-  silver: '🥈 Plata',
-  gold:   '🥇 Oro'
-};
+const infoButtons = document.querySelectorAll('.mem-info-btn');
+const closeButtons = document.querySelectorAll('.modal-close-btn');
 
-const fields = [
-  { key: 'firstName',  label: 'Nombre' },
-  { key: 'lastName',   label: 'Apellido' },
-  { key: 'email',      label: 'Correo electrónico' },
-  { key: 'phone',      label: 'Teléfono móvil' },
-  { key: 'orgName',    label: 'Empresa' },
-  { key: 'membership', label: 'Nivel de membresía' },
-  { key: 'timestamp',  label: 'Fecha de solicitud' },
-];
+infoButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = document.getElementById(btn.getAttribute('data-modal'));
+    if (modal) modal.showModal();
+  });
+});
 
-const grid = document.getElementById('summary-grid');
+closeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = document.getElementById(btn.getAttribute('data-close'));
+    if (modal) modal.close();
+  });
+});
 
-fields.forEach(field => {
-  let value = params.get(field.key) || '—';
-
-  if (field.key === 'membership' && membershipLabels[value]) {
-    value = membershipLabels[value];
-  }
-
-  const item = document.createElement('div');
-  item.classList.add('summary-item');
-  item.innerHTML = `
-    <span class="summary-label">${field.label}</span>
-    <span class="summary-value">${value}</span>
-  `;
-  grid.appendChild(item);
+document.querySelectorAll('.mem-modal').forEach(modal => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.close();
+  });
 });
