@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Únete a la Cámara de Comercio e Industria de Potosí. Completa el formulario de membresía y forma parte de la red empresarial más importante del altiplano boliviano." />
+  <meta name="author" content="Alex Condori Molle" />
+  <title>Únete | Cámara de Comercio de Potosí</title>
+
+  <meta property="og:title" content="Únete a la Cámara de Comercio de Potosí" />
+  <meta property="og:description" content="Forma parte de la red empresarial más importante del altiplano boliviano." />
+  <meta property="og:image" content="https://alexcm.github.io/wdd231/chamber/images/og-image.jpg" />
+  <meta property="og:url" content="https://alexcm.github.io/wdd231/chamber/join.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/small.css" />
+  <link rel="stylesheet" href="css/larger.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-icon">⛏</div>
+        <div class="brand-name">Cámara de Comercio<br><span style="font-size:0.8rem;font-weight:400;">Potosí, Bolivia</span></div>
+      </div>
+      <nav id="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="directory.html">Directorio</a>
+        <a href="join.html" class="active">Únete</a>
+        <a href="discover.html">Descubre</a>
+      </nav>
+      <div class="nav-controls">
+        <button id="theme-btn" aria-label="Cambiar tema">🌙</button>
+        <button id="menu-btn" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="join-main">
+
+    <div class="join-header">
+      <h1>Solicitud de Membresía</h1>
+      <p>Completa el formulario y un representante de la cámara se pondrá en contacto contigo en un plazo de 48 horas.</p>
+    </div>
+
+    <div class="join-layout">
+
+      <section class="form-section">
+        <form id="join-form" method="get" action="thankyou.html" novalidate>
+
+          <label for="first-name">
+            Nombre <span class="required">*</span>
+            <input
+              type="text"
+              id="first-name"
+              name="firstName"
+              title="Ingresa tu nombre"
+              autocomplete="given-name"
+              placeholder="Ej: Alex"
+              required
+            />
+          </label>
+
+          <label for="last-name">
+            Apellido <span class="required">*</span>
+            <input
+              type="text"
+              id="last-name"
+              name="lastName"
+              title="Ingresa tu apellido"
+              autocomplete="family-name"
+              placeholder="Ej: Condori"
+              required
+            />
+          </label>
+
+          <label for="org-title">
+            Cargo en la organización
+            <input
+              type="text"
+              id="org-title"
+              name="orgTitle"
+              title="Mínimo 7 caracteres, solo letras, guiones y espacios"
+              autocomplete="organization-title"
+              placeholder="Ej: Gerente General"
+              pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\- ]{7,}"
+            />
+            <span class="field-hint">Mínimo 7 caracteres, solo letras, guiones y espacios</span>
+          </label>
+
+          <label for="email">
+            Correo electrónico <span class="required">*</span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              title="Ingresa un correo electrónico válido"
+              autocomplete="email"
+              placeholder="ejemplo@tuempresa.com"
+              required
+            />
+          </label>
+
+          <label for="phone">
+            Teléfono móvil <span class="required">*</span>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              title="Ingresa tu número de teléfono móvil"
+              autocomplete="tel"
+              placeholder="+591 7XXXXXXX"
+              required
+            />
+          </label>
+
+          <label for="org-name">
+            Nombre de la empresa <span class="required">*</span>
+            <input
+              type="text"
+              id="org-name"
+              name="orgName"
+              title="Ingresa el nombre de tu empresa u organización"
+              autocomplete="organization"
+              placeholder="Ej: Minería Andes S.R.L."
+              required
+            />
+          </label>
+
+          <label for="membership">
+            Nivel de membresía <span class="required">*</span>
+            <select id="membership" name="membership" title="Selecciona el nivel de membresía" required>
+              <option value="" disabled selected>-- Selecciona un nivel --</option>
+              <option value="np">NP – Sin costo (organizaciones sin fines de lucro)</option>
+              <option value="bronze">Bronce</option>
+              <option value="silver">Plata</option>
+              <option value="gold">Oro</option>
+            </select>
+          </label>
+
+          <label for="description">
+            Descripción de tu empresa
+            <textarea
+              id="description"
+              name="description"
+              title="Describe brevemente tu empresa u organización"
+              rows="4"
+              placeholder="Cuéntanos a qué se dedica tu empresa..."
+            ></textarea>
+          </label>
+
+          <input type="hidden" id="timestamp" name="timestamp" />
+
+          <input type="submit" value="Enviar solicitud" class="submit-btn" />
+        </form>
+      </section>
+
+      <aside class="membership-cards">
+        <h2>Niveles de membresía</h2>
+
+        <div class="mem-card mem-np">
+          <div class="mem-icon">🤝</div>
+          <h3>NP – Sin costo</h3>
+          <p>Para organizaciones sin fines de lucro</p>
+          <button class="mem-info-btn" data-modal="modal-np">Ver beneficios</button>
+        </div>
+
+        <div class="mem-card mem-bronze">
+          <div class="mem-icon">🥉</div>
+          <h3>Bronce</h3>
+          <p>Ideal para pequeñas empresas</p>
+          <button class="mem-info-btn" data-modal="modal-bronze">Ver beneficios</button>
+        </div>
+
+        <div class="mem-card mem-silver">
+          <div class="mem-icon">🥈</div>
+          <h3>Plata</h3>
+          <p>Para empresas en crecimiento</p>
+          <button class="mem-info-btn" data-modal="modal-silver">Ver beneficios</button>
+        </div>
+
+        <div class="mem-card mem-gold">
+          <div class="mem-icon">🥇</div>
+          <h3>Oro</h3>
+          <p>Máxima visibilidad y beneficios</p>
+          <button class="mem-info-btn" data-modal="modal-gold">Ver beneficios</button>
+        </div>
+      </aside>
+
+    </div><!-- /join-layout -->
+  </main>
+
+  <!-- MODALES -->
+  <dialog id="modal-np" class="mem-modal">
+    <div class="modal-inner">
+      <h2>🤝 Membresía NP – Sin costo</h2>
+      <p class="modal-price">Gratuita · Organizaciones sin fines de lucro</p>
+      <ul>
+        <li>✅ Listado en el directorio de miembros</li>
+        <li>✅ Acceso a eventos informativos</li>
+        <li>✅ Boletín mensual de la cámara</li>
+        <li>✅ Red de contactos empresariales</li>
+      </ul>
+      <button class="modal-close-btn" data-close="modal-np">Cerrar</button>
+    </div>
+  </dialog>
+
+  <dialog id="modal-bronze" class="mem-modal">
+    <div class="modal-inner">
+      <h2>🥉 Membresía Bronce</h2>
+      <p class="modal-price">Bs. 500 / año</p>
+      <ul>
+        <li>✅ Todo lo incluido en NP</li>
+        <li>✅ Descuento del 10% en eventos</li>
+        <li>✅ Perfil básico en el directorio</li>
+        <li>✅ 1 publicación mensual en redes sociales</li>
+        <li>✅ Certificado de membresía</li>
+      </ul>
+      <button class="modal-close-btn" data-close="modal-bronze">Cerrar</button>
+    </div>
+  </dialog>
+
+  <dialog id="modal-silver" class="mem-modal">
+    <div class="modal-inner">
+      <h2>🥈 Membresía Plata</h2>
+      <p class="modal-price">Bs. 1.200 / año</p>
+      <ul>
+        <li>✅ Todo lo incluido en Bronce</li>
+        <li>✅ Descuento del 20% en eventos</li>
+        <li>✅ Perfil destacado en el directorio</li>
+        <li>✅ Aparición en sección Spotlight de la web</li>
+        <li>✅ Acceso a talleres de capacitación</li>
+        <li>✅ 3 publicaciones mensuales en redes sociales</li>
+      </ul>
+      <button class="modal-close-btn" data-close="modal-silver">Cerrar</button>
+    </div>
+  </dialog>
+
+  <dialog id="modal-gold" class="mem-modal">
+    <div class="modal-inner">
+      <h2>🥇 Membresía Oro</h2>
+      <p class="modal-price">Bs. 2.500 / año</p>
+      <ul>
+        <li>✅ Todo lo incluido en Plata</li>
+        <li>✅ Descuento del 35% en todos los eventos</li>
+        <li>✅ Posición prioritaria en el directorio</li>
+        <li>✅ Spotlight garantizado en la página principal</li>
+        <li>✅ Logo en materiales oficiales de la cámara</li>
+        <li>✅ Reunión trimestral con directivos</li>
+        <li>✅ Publicaciones ilimitadas en redes sociales</li>
+      </ul>
+      <button class="modal-close-btn" data-close="modal-gold">Cerrar</button>
+    </div>
+  </dialog>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-contact">
+        <strong>Cámara de Comercio e Industria de Potosí</strong>
+        <p>Plaza 6 de Agosto #23, Potosí, Bolivia</p>
+        <p>📞 +591 2 622-4455</p>
+        <p>✉ info@camarapotosi.bo</p>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+      <div class="footer-meta">
+        <p>Alex Condori Molle</p>
+        <p>WDD 231</p>
+        <p>© <span id="copy-year"></span> Cámara de Comercio de Potosí</p>
+        <p>Última modificación: <span id="last-mod"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/join.js"></script>
+</body>
+</html>

@@ -113,3 +113,29 @@
   }
 }
  
+@media (min-width: 768px) {
+  .join-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+ 
+  .form-section {
+    flex: 1 1 60%;
+  }
+ 
+  .membership-cards {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 80px;
+  }
+
+  .summary-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  .summary-label {
+    min-width: 180px;
+  }
+}
