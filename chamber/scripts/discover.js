@@ -1,8 +1,6 @@
 // discover.js
 // Potosí Chamber of Commerce | Alex Condori Molle | WDD 231
 
-import { places } from '../data/places.mjs';
-
 // ── Footer ──
 document.getElementById('copy-year').textContent = new Date().getFullYear();
 document.getElementById('last-mod').textContent = document.lastModified;
@@ -38,48 +36,85 @@ const lastVisit = localStorage.getItem('discoverLastVisit');
 const now = Date.now();
 
 if (!lastVisit) {
-  // First visit ever
-  visitorMsg.textContent = 'Welcome! Let us know if you have any questions.';
+  visitorMsg.textContent = '✨ Welcome! This is your first time visiting this page. Enjoy discovering Potosí.';
 } else {
   const msPerDay = 1000 * 60 * 60 * 24;
   const daysSince = Math.floor((now - Number(lastVisit)) / msPerDay);
 
   if (daysSince < 1) {
-    visitorMsg.textContent = 'Back so soon! Awesome!';
+    visitorMsg.textContent = '👋 Back so soon! Thanks for visiting again today.';
   } else if (daysSince === 1) {
-    visitorMsg.textContent = 'You last visited 1 day ago.';
+    visitorMsg.textContent = '🌟 You last visited yesterday. Welcome back!';
   } else {
-    visitorMsg.textContent = `You last visited ${daysSince} days ago.`;
+    visitorMsg.textContent = `🕰️ You last visited ${daysSince} days ago. So much has changed – enjoy exploring!`;
+  }
+}
+localStorage.setItem('discoverLastVisit', now);
+
+// ── Load place cards from data/places.json ──
+const grid = document.getElementById('places-grid');
+
+async function loadPlaces() {
+  // Mostrar mensaje de carga mientras se obtienen los datos
+  grid.innerHTML = '<p class="loading">Loading places...</p>';
+
+  try {
+    const response = await fetch('data/places.json');
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const places = await response.json();
+    buildCards(places);
+  } catch (error) {
+    console.error('Error loading places:', error);
+    grid.innerHTML = '<p class="error">❌ Could not load places data. Please try again later.</p>';
   }
 }
 
-// Save current visit date
-localStorage.setItem('discoverLastVisit', now);
+function buildCards(places) {
+  grid.innerHTML = ''; // Limpiar mensaje de carga
 
-// ── Build place cards from JSON data ──
-const grid = document.getElementById('places-grid');
+  places.forEach((place, index) => {
+    const card = document.createElement('div');
+    card.classList.add('place-card');
+    // Opcional: asignar grid area (si usas grid-template-areas)
+    // card.style.gridArea = `place${index + 1}`;
 
-places.forEach((place, index) => {
-  const card = document.createElement('div');
-  card.classList.add('place-card');
-  card.style.gridArea = `place${index + 1}`;
+    card.innerHTML = `
+      <h2>${escapeHtml(place.name)}</h2>
+      <figure>
+        <img
+          src="${place.image}"
+          alt="${escapeHtml(place.name)}"
+          loading="lazy"
+          width="300"
+          height="200"
+          onerror="this.onerror=null; this.src='images/placeholder.jpg';"
+        />
+      </figure>
+      <p>${escapeHtml(place.description)}</p>
+      <address>${escapeHtml(place.address)}</address>
+      <button class="learn-more-btn" type="button">Learn More</button>
+    `;
 
-  card.innerHTML = `
-    <h2>${place.name}</h2>
-    <figure>
-      <img
-        src="${place.image}"
-        alt="${place.name}"
-        loading="lazy"
-        width="300"
-        height="200"
-        onerror="this.src='images/placeholder.jpg'"
-      />
-    </figure>
-    <p>${place.description}</p>
-    <address>${place.address}</address>
-    <button class="learn-more-btn" type="button">Learn More</button>
-  `;
+    // Agregar evento al botón para abrir el enlace externo
+    const btn = card.querySelector('.learn-more-btn');
+    btn.addEventListener('click', () => {
+      window.open(place.link, '_blank', 'noopener,noreferrer');
+    });
 
-  grid.appendChild(card);
-});
+    grid.appendChild(card);
+  });
+}
+
+// Función simple para prevenir XSS (escapar caracteres HTML)
+function escapeHtml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// Iniciar carga de los lugares
+loadPlaces();

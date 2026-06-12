@@ -55,7 +55,7 @@
    W05 – Discover Page (larger.css)
    ============================================================ */
 
-/* Medium screens: 641px–1024px — 1 column, image left + text right */
+/* Medium screen */
 @media (min-width: 641px) and (max-width: 1024px) {
   .places-grid {
     grid-template-columns: 1fr;
