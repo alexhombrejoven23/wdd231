@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site Plan for Bolivia Startup Directory — WDD231 Individual Project">
+  <meta name="author" content="Anghyli">
+  <title>Site Plan — Bolivia Startup Directory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral:   #FF6B6B;
+      --mustard: #F4C430;
+      --mint:    #52D9A0;
+      --sky:     #5BB8F5;
+      --lavender:#B48EF7;
+      --ink:     #1C1C2E;
+      --paper:   #FDFCF7;
+      --muted:   #6B6B8A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f0f1a;
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* ── DECORATIVE BACKGROUND BLOBS ── */
+    body::before {
+      content: '';
+      position: fixed;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,107,107,0.18) 0%, transparent 70%);
+      top: -150px; left: -150px;
+      pointer-events: none; z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,184,245,0.15) 0%, transparent 70%);
+      bottom: -100px; right: -100px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      background: linear-gradient(135deg, #1C1C2E 0%, #2d1b4e 50%, #1a2a3a 100%);
+      overflow: hidden;
+    }
+
+    header .blob1 {
+      position: absolute;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(82,217,160,0.12);
+      top: -80px; right: 10%;
+      filter: blur(40px);
+    }
+    header .blob2 {
+      position: absolute;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: rgba(244,196,48,0.1);
+      bottom: -60px; left: 5%;
+      filter: blur(35px);
+    }
+
+    .header-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--mint);
+      border: 1px solid rgba(82,217,160,0.4);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    header h1 span {
+      color: var(--mustard);
+    }
+
+    header .sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── NAV PILLS ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(28, 28, 46, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 0.7rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    nav ul li a {
+      display: block;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: all 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: var(--ink);
+      background: var(--mustard);
+      border-color: var(--mustard);
+    }
+
+    /* ── MAIN WRAPPER ── */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* ── SECTION CARD BASE ── */
+    .card {
+      background: var(--paper);
+      border-radius: 20px;
+      padding: 2.2rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 5px; height: 100%;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .card.accent-coral::before  { background: var(--coral); }
+    .card.accent-mint::before   { background: var(--mint); }
+    .card.accent-sky::before    { background: var(--sky); }
+    .card.accent-mustard::before{ background: var(--mustard); }
+    .card.accent-lavender::before{ background: var(--lavender); }
+
+    .card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+    }
+
+    .cl-coral    { background: #fff0f0; color: var(--coral); }
+    .cl-mint     { background: #e8faf3; color: #1fa870; }
+    .cl-sky      { background: #e8f4fd; color: #2a8fd4; }
+    .cl-mustard  { background: #fdf6e0; color: #b8890a; }
+    .cl-lavender { background: #f2eeff; color: #7a5bbf; }
+
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    h3.sub-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    p { color: #3a3a5c; line-height: 1.75; font-size: 0.95rem; margin-bottom: 0.7rem; }
+
+    ul.styled {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    ul.styled li {
+      padding-left: 1.4rem;
+      position: relative;
+      color: #3a3a5c;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    ul.styled li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--mint);
+      font-size: 0.8rem;
+      top: 3px;
+    }
+
+    strong { font-weight: 600; color: var(--ink); }
+
+    code {
+      font-family: 'Poppins', monospace;
+      font-size: 0.8rem;
+      background: #f0eeff;
+      color: #6941c6;
+      padding: 0.1rem 0.45rem;
+      border-radius: 5px;
+    }
+
+    /* ── SCENARIOS ── */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .scenario-grid { grid-template-columns: 1fr; }
+    }
+
+    .scenario-item {
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      font-size: 0.88rem;
+      font-style: italic;
+      line-height: 1.65;
+      color: #3a3a5c;
+      position: relative;
+    }
+
+    .scenario-item::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      line-height: 1;
+      position: absolute;
+      top: 0.2rem; left: 0.6rem;
+      opacity: 0.25;
+    }
+
+    .si-1 { background: #fff4f4; border-left: 3px solid var(--coral); }
+    .si-2 { background: #e8faf3; border-left: 3px solid var(--mint); }
+    .si-3 { background: #e8f4fd; border-left: 3px solid var(--sky); }
+    .si-4 { background: #fdf6e0; border-left: 3px solid var(--mustard); }
+
+    /* ── COLOR SWATCHES ── */
+    .swatch-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 0.75rem;
+    }
+
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #fff;
+      border: 1px solid #e8e8f0;
+      border-radius: 12px;
+      padding: 0.6rem 1rem 0.6rem 0.6rem;
+      flex: 1 1 200px;
+    }
+
+    .swatch-dot {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+
+    .swatch-text strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .swatch-text span {
+      font-size: 0.73rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── TYPOGRAPHY SAMPLES ── */
+    .type-block {
+      background: #f8f7ff;
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      margin: 0.75rem 0;
+      border: 1px solid #e8e4ff;
+    }
+
+    .type-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--lavender);
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── WIREFRAME SECTION ── */
+    .wireframe-duo {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .wireframe-duo { grid-template-columns: 1fr; }
+    }
+
+    .wf-frame {
+      background: #f0f0f8;
+      border-radius: 14px;
+      padding: 1rem;
+      border: 1px dashed #c8c8e0;
+    }
+
+    .wf-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .wf-el {
+      border-radius: 8px;
+      text-align: center;
+      font-size: 0.65rem;
+      font-weight: 500;
+      padding: 0.35rem 0.5rem;
+      margin-bottom: 5px;
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+
+    .wf-nav    { background: #2d1b4e; }
+    .wf-hero   { background: linear-gradient(90deg,#FF6B6B,#F4C430); min-height: 48px; display:flex; align-items:center; justify-content:center; }
+    .wf-filter { background: #52D9A0; color: var(--ink); }
+    .wf-card   { background: #fff; color: #3a3a5c; border: 1px dashed #c8c8e0; }
+    .wf-stat   { background: #5BB8F5; }
+    .wf-footer { background: #1C1C2E; }
+    .wf-row    { display:flex; gap:4px; margin-bottom:5px; }
+    .wf-row .wf-el { flex:1; margin-bottom:0; }
+
+    /* ── SITEMAP ── */
+    .sitemap-wrap {
+      margin-top: 1rem;
+      overflow-x: auto;
+    }
+
+    .sitemap {
+      min-width: 560px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding: 1rem 0;
+      position: relative;
+    }
+
+    /* center root node */
+    .sm-root {
+      background: linear-gradient(135deg, var(--coral), #ff8e53);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(255,107,107,0.35);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* vertical dotted connector down from root */
+    .sm-connector-v {
+      width: 2px;
+      height: 32px;
+      border-left: 2px dashed rgba(255,107,107,0.5);
+      margin: 0 auto;
+    }
+
+    /* horizontal bar */
+    .sm-h-bar {
+      width: 80%;
+      height: 2px;
+      background: none;
+      border-top: 2px dashed #c8c8e0;
+      position: relative;
+    }
+
+    /* children row */
+    .sm-row {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+
+    .sm-child-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      flex: 1;
+    }
+
+    /* small vertical connector up to bar */
+    .sm-v-up {
+      width: 2px;
+      height: 24px;
+      border-left: 2px dashed #c8c8e0;
+    }
+
+    .sm-node {
+      padding: 0.65rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.4;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .sm-node span { display:block; font-size:0.65rem; font-weight:400; opacity:0.8; margin-top:2px; }
+
+    /* shape variants */
+    .shape-round   { border-radius: 50px; }
+    .shape-squircle{ border-radius: 18px; }
+    .shape-clipped {
+      border-radius: 4px 20px 4px 20px;
+    }
+    .shape-diamond-ish {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      padding: 0.8rem 1rem;
+    }
+
+    /* node color variants */
+    .nc-mint    { background: linear-gradient(135deg,#52D9A0,#30bfaa); color:#fff; }
+    .nc-sky     { background: linear-gradient(135deg,#5BB8F5,#3a9de0); color:#fff; }
+    .nc-mustard { background: linear-gradient(135deg,#F4C430,#e0a800); color:#1c1c2e; }
+    .nc-lavender{ background: linear-gradient(135deg,#B48EF7,#8a5cf6); color:#fff; }
+    .nc-gray    { background: linear-gradient(135deg,#e0e0f0,#c8c8e0); color:#3a3a5c; }
+
+    /* vertical connectors going down from child nodes */
+    .sm-v-down {
+      width: 2px; height: 18px;
+      border-left: 2px dashed #c8c8e0;
+    }
+
+    /* sub-page nodes */
+    .sm-sub {
+      background: #fff;
+      border: 1.5px dashed #c8c8e0;
+      border-radius: 10px;
+      padding: 0.4rem 0.65rem;
+      font-size: 0.68rem;
+      color: var(--muted);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* ── PAGES TABLE ── */
+    .pages-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      margin-top: 0.5rem;
+    }
+
+    .pages-table thead tr th {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      padding: 0.4rem 1rem;
+      text-align: left;
+    }
+
+    .pages-table tbody tr {
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    .pages-table tbody tr td {
+      padding: 0.8rem 1rem;
+      font-size: 0.88rem;
+      color: #3a3a5c;
+      vertical-align: top;
+    }
+
+    .pages-table tbody tr td:first-child {
+      border-radius: 10px 0 0 10px;
+      border-left: 3px solid var(--sky);
+      font-weight: 600;
+    }
+
+    .pages-table tbody tr td:last-child {
+      border-radius: 0 10px 10px 0;
+    }
+
+    /* ── FOLDER TREE ── */
+    pre.folder-tree {
+      background: #1C1C2E;
+      color: #c8ffea;
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      font-size: 0.82rem;
+      line-height: 1.9;
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid rgba(82,217,160,0.2);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: #1C1C2E;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.82rem;
+    }
+
+    footer strong { color: var(--mustard); }
+  </style>
+</head>
+<body>
+
+  <!-- decorative blobs handled via CSS -->
+
+  <header>
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+    <div class="header-eyebrow">🧭 WDD231 — Individual Project</div>
+    <h1>Bolivia Startup<br><span>Directory</span></h1>
+    <p class="sub">Site Plan &nbsp;·&nbsp; Alex &nbsp;·&nbsp; BYU-Pathway Worldwide &nbsp;·&nbsp; 2025</p>
+  </header>
+
+  <nav aria-label="Site plan navigation">
+    <ul>
+      <li><a href="#site-name">📌 Site Name</a></li>
+      <li><a href="#purpose">🎯 Purpose</a></li>
+      <li><a href="#scenarios">💬 Scenarios</a></li>
+      <li><a href="#colors">🎨 Colors</a></li>
+      <li><a href="#typography">✏️ Typography</a></li>
+      <li><a href="#wireframe">📐 Wireframe</a></li>
+      <li><a href="#sitemap">🗺️ Sitemap</a></li>
+      <li><a href="#pages">📄 Pages</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- 1. SITE NAME -->
+    <section class="card accent-coral" id="site-name">
+      <div class="card-label cl-coral">📌 01 &nbsp; Site Name</div>
+      <h2 class="section-title">Bolivia Startup Directory</h2>
+      <p>
+        The name was chosen because it directly communicates the site's purpose: a structured, 
+        searchable directory focused entirely on Bolivia's startup ecosystem. The word <strong>"Startup"</strong> 
+        is internationally recognized and appeals to both local entrepreneurs and foreign investors 
+        exploring emerging Latin American markets.
+      </p>
+      <p>
+        <strong>Suggested domain:</strong> <code>boliviastartups.bo</code> &nbsp;·&nbsp;
+        <strong>Alternative:</strong> <code>boliviastartupdirectory.com</code>
+      </p>
+    </section>
+
+    <!-- 2. PURPOSE -->
+    <section class="card accent-mint" id="purpose">
+      <div class="card-label cl-mint">🎯 02 &nbsp; Site Purpose</div>
+      <h2 class="section-title">What this site is for</h2>
+      <p>
+        Bolivia Startup Directory is a web platform that centralizes and organizes information 
+        about Bolivian startups across five key sectors: <strong>Technology, Fintech, Agriculture, 
+        Health,</strong> and <strong>Education</strong>.
+      </p>
+      <ul class="styled">
+        <li>Offer a browsable, filterable directory of national startups with relevant company data.</li>
+        <li>Give visibility to Bolivia's entrepreneurial ecosystem for investors, partners, and media.</li>
+        <li>Connect entrepreneurs with resources, events, and opportunities in Bolivia's tech scene.</li>
+        <li>Help students and professionals discover job and internship opportunities at startups.</li>
+      </ul>
+      <p style="margin-top:0.8rem;">
+        <strong>Primary audience:</strong> Bolivian entrepreneurs, tech professionals, Latin America-focused 
+        investors, and university students looking for startup careers.
+      </p>
+    </section>
+
+    <!-- 3. SCENARIOS -->
+    <section class="card accent-sky" id="scenarios">
+      <div class="card-label cl-sky">💬 03 &nbsp; Visitor Scenarios</div>
+      <h2 class="section-title">Who visits — and what they ask</h2>
+      <p>These questions represent what a typical visitor might be searching for:</p>
+      <div class="scenario-grid">
+        <div class="scenario-item si-1">
+          Which active Fintech startups are based in Bolivia, and how can I get in touch with them?
+        </div>
+        <div class="scenario-item si-2">
+          I'm a foreign investor — which Bolivian agro startups have recently received funding?
+        </div>
+        <div class="scenario-item si-3">
+          I'm a university student in La Paz — which education or tech startups are hiring interns?
+        </div>
+        <div class="scenario-item si-4">
+          How do I submit my Bolivian startup to the directory to get more visibility?
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. COLORS -->
+    <section class="card accent-mustard" id="colors">
+      <div class="card-label cl-mustard">🎨 04 &nbsp; Color Scheme</div>
+      <h2 class="section-title">The palette</h2>
+      <p>
+        Colors were selected to feel modern and energetic while keeping Bolivia's green identity 
+        at the core. Each color has a specific role to ensure visual clarity and accessibility.
+      </p>
+      <div class="swatch-row">
+        <div class="swatch">
+          <div class="swatch-dot" style="background:#1a7a3c;"></div>
+          <div class="swatch-text">
+            <strong>Primary Green</strong>
+            <span>#1a7a3c — Header, nav, primary buttons, key accents</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-dot" style="background:#2ea856;"></div>
+          <div class="swatch-text">
+            <strong>Light Green</strong>
+            <span>#2ea856 — Hover states, active borders, success badges</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-dot" style="background:#0f4f26;"></div>
+          <div class="swatch-text">
+            <strong>Dark Green</strong>
+            <span>#0f4f26 — Footer, secondary nav, dark text on light</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-dot" style="background:#ffffff; box-shadow:0 0 0 1px #d0d0e0;"></div>
+          <div class="swatch-text">
+            <strong>White</strong>
+            <span>#ffffff — Cards, content areas, text on dark bg</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-dot" style="background:#f5faf7;"></div>
+          <div class="swatch-text">
+            <strong>Off-White</strong>
+            <span>#f5faf7 — Page background, alternating sections</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-dot" style="background:#1e2d24;"></div>
+          <div class="swatch-text">
+            <strong>Ink</strong>
+            <span>#1e2d24 — Body text, headings, startup data labels</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TYPOGRAPHY -->
+    <section class="card accent-lavender" id="typography">
+      <div class="card-label cl-lavender">✏️ 05 &nbsp; Typography</div>
+      <h2 class="section-title">Fonts &amp; how they're used</h2>
+      <p>Two Google Fonts chosen for contrast of personality — one with flair, one for clarity.</p>
+
+      <h3 class="sub-title">Montserrat — headings &amp; navigation</h3>
+      <div class="type-block">
+        <p class="type-tag">h1–h3 · nav links · buttons · labels</p>
+        <p style="font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:700; color:#1a7a3c; margin:0 0 0.3rem;">
+          Bolivia Startup Directory
+        </p>
+        <p style="font-family:'Poppins',sans-serif; font-size:1rem; font-weight:600; color:#1e2d24; margin:0;">
+          Innovative Companies Across Five Sectors
+        </p>
+      </div>
+      <p>
+        Montserrat was chosen for its geometric precision and modern personality — it reads as 
+        "tech-forward" and pairs naturally with startup branding. Weight 700 works well as a 
+        header over the primary green.
+      </p>
+
+      <h3 class="sub-title">Open Sans — body text</h3>
+      <div class="type-block">
+        <p class="type-tag">paragraphs · descriptions · startup data · forms</p>
+        <p style="font-family:'Poppins',sans-serif; font-size:0.95rem; font-weight:400; color:#3a3a5c; margin:0;">
+          We are a platform that connects Bolivia's entrepreneurial ecosystem with growth opportunities, 
+          funding, and national and international visibility.
+        </p>
+      </div>
+      <p>
+        Open Sans delivers excellent readability at all screen sizes. Its open letterforms 
+        make it ideal for long descriptions and data-dense startup cards.
+      </p>
+    </section>
+
+    <!-- 6. WIREFRAME -->
+    <section class="card accent-coral" id="wireframe">
+      <div class="card-label cl-coral">📐 06 &nbsp; Wireframe</div>
+      <h2 class="section-title">Home page layout — index.html</h2>
+      <p>Mobile (320px) and desktop (1024px+) layout sketches for the landing page.</p>
+
+      <div class="wireframe-duo">
+        <!-- MOBILE -->
+        <div class="wf-frame">
+          <p class="wf-label">📱 Mobile</p>
+          <div class="wf-el wf-nav">☰ hamburger menu</div>
+          <div class="wf-el wf-hero">Hero · title + CTA button</div>
+          <div class="wf-el wf-filter">Sector filter (dropdown)</div>
+          <div class="wf-el wf-card">Startup card 1</div>
+          <div class="wf-el wf-card">Startup card 2</div>
+          <div class="wf-el wf-card">Startup card 3</div>
+          <div class="wf-el wf-stat">Ecosystem stats</div>
+          <div class="wf-el wf-card">About section</div>
+          <div class="wf-el wf-footer">Footer + video link</div>
+        </div>
+
+        <!-- DESKTOP -->
+        <div class="wf-frame">
+          <p class="wf-label">🖥️ Desktop</p>
+          <div class="wf-el wf-nav">Logo &nbsp;|&nbsp; Home · Directory · About</div>
+          <div class="wf-el wf-hero" style="min-height:52px;">Full-width hero · tagline + CTA</div>
+          <div class="wf-el wf-filter">[ All ] [ Tech ] [ Fintech ] [ Agro ] [ Health ] [ Education ]</div>
+          <div class="wf-row">
+            <div class="wf-el wf-card">Card 1</div>
+            <div class="wf-el wf-card">Card 2</div>
+            <div class="wf-el wf-card">Card 3</div>
+          </div>
+          <div class="wf-row">
+            <div class="wf-el wf-card">Card 4</div>
+            <div class="wf-el wf-card">Card 5</div>
+            <div class="wf-el wf-card">Card 6</div>
+          </div>
+          <div class="wf-el wf-filter">→ View full directory</div>
+          <div class="wf-row">
+            <div class="wf-el wf-stat">Stats · 15+ startups</div>
+            <div class="wf-el wf-card">About the project</div>
+          </div>
+          <div class="wf-el wf-footer">Footer · Author · Attributions · Video · © 2025</div>
+        </div>
+      </div>
+
+      <h3 class="sub-title" style="margin-top:1.4rem;">Wireframe notes</h3>
+      <ul class="styled">
+        <li>Cards display: name, sector, city, founding year, and short description.</li>
+        <li>Clicking a card opens a modal with full startup details (JS requirement).</li>
+        <li>Sector filter uses JavaScript <code>filter()</code> to show/hide cards dynamically.</li>
+        <li>Hamburger menu activates with JS on screens narrower than 768px.</li>
+      </ul>
+    </section>
+
+    <!-- 7. SITEMAP -->
+    <section class="card accent-sky" id="sitemap">
+      <div class="card-label cl-sky">🗺️ 07 &nbsp; Site Map</div>
+      <h2 class="section-title">How the pages connect</h2>
+
+      <div class="sitemap-wrap">
+        <div class="sitemap">
+
+          <!-- ROOT -->
+          <div class="sm-root">🏠 Bolivia Startup Directory</div>
+          <div class="sm-connector-v"></div>
+          <div class="sm-h-bar"></div>
+
+          <!-- CHILD ROW -->
+          <div class="sm-row">
+
+            <div class="sm-child-wrap">
+              <div class="sm-v-up"></div>
+              <div class="sm-node shape-round nc-mint">index.html<span>Home</span></div>
+              <div class="sm-v-down"></div>
+              <div class="sm-sub">Featured startups<br>Hero + filters</div>
+            </div>
+
+            <div class="sm-child-wrap">
+              <div class="sm-v-up"></div>
+              <div class="sm-node shape-clipped nc-sky">directory.html<span>Directory</span></div>
+              <div class="sm-v-down"></div>
+              <div class="sm-sub">15+ startup cards<br>JSON data + search</div>
+            </div>
+
+            <div class="sm-child-wrap">
+              <div class="sm-v-up"></div>
+              <div class="sm-node shape-squircle nc-mustard">about.html<span>About</span></div>
+              <div class="sm-v-down"></div>
+              <div class="sm-sub">Bolivia tech scene<br>Contact form</div>
+            </div>
+
+            <div class="sm-child-wrap">
+              <div class="sm-v-up"></div>
+              <div class="sm-node shape-diamond-ish nc-lavender">thankyou.html<span>Form action</span></div>
+              <div class="sm-v-down"></div>
+              <div class="sm-sub">Form result display<br>(not a main page)</div>
+            </div>
+
+            <div class="sm-child-wrap">
+              <div class="sm-v-up"></div>
+              <div class="sm-node shape-round nc-gray">attributions.html<span>Credits</span></div>
+              <div class="sm-v-down"></div>
+              <div class="sm-sub">Image &amp; data sources<br>(unstyled)</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PAGES -->
+    <section class="card accent-mint" id="pages">
+      <div class="card-label cl-mint">📄 08 &nbsp; Pages &amp; Structure</div>
+      <h2 class="section-title">Pages overview</h2>
+
+      <table class="pages-table">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Page name</th>
+            <th>Main content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>index.html</code></td>
+            <td>Home</td>
+            <td>Hero, 6 featured startup cards, sector filter, ecosystem stats, about section</td>
+          </tr>
+          <tr>
+            <td><code>directory.html</code></td>
+            <td>Directory</td>
+            <td>15+ dynamically generated cards from <code>startups.json</code> via Fetch API, filters, modal</td>
+          </tr>
+          <tr>
+            <td><code>about.html</code></td>
+            <td>About Bolivia Tech</td>
+            <td>Bolivia's startup ecosystem overview, external API news section, contact/submit form</td>
+          </tr>
+          <tr>
+            <td><code>thankyou.html</code></td>
+            <td>Confirmation</td>
+            <td>Form action page — displays submitted data. <em>Does not count as a main page.</em></td>
+          </tr>
+          <tr>
+            <td><code>attributions.html</code></td>
+            <td>Attributions</td>
+            <td>Credits for images, data, and external sources. <em>No styling required.</em></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-title" style="margin-top:1.5rem;">Folder structure</h3>
+      <pre class="folder-tree">wdd231/
+└── final/
+    ├── index.html
+    ├── directory.html
+    ├── about.html
+    ├── thankyou.html
+    ├── attributions.html
+    ├── styles/
+    │   └── main.css
+    ├── scripts/
+    │   ├── main.js
+    │   ├── directory.js
+    │   └── modal.js
+    ├── data/
+    │   └── startups.json
+    └── images/
+        └── [optimized startup logos]</pre>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Bolivia Startup Directory</strong> &mdash; WDD231 Individual Project Site Plan</p>
+    <p style="margin-top:0.4rem;">Developed by <strong>Alex</strong> &nbsp;·&nbsp; BYU-Pathway Worldwide &nbsp;·&nbsp; 2025</p>
+  </footer>
+
+</body>
+</html>
