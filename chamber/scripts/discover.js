@@ -1,7 +1,3 @@
-// discover.js
-// Potosí Chamber of Commerce | Alex Condori Molle | WDD 231
-
-// ── Footer ──
 document.getElementById('copy-year').textContent = new Date().getFullYear();
 document.getElementById('last-mod').textContent = document.lastModified;
 
@@ -30,7 +26,6 @@ menuBtn.addEventListener('click', () => {
   menuBtn.textContent = mainNav.classList.contains('open') ? '✕' : '☰';
 });
 
-// ── Visitor message using localStorage ──
 const visitorMsg = document.getElementById('visitor-msg');
 const lastVisit = localStorage.getItem('discoverLastVisit');
 const now = Date.now();
@@ -55,7 +50,6 @@ localStorage.setItem('discoverLastVisit', now);
 const grid = document.getElementById('places-grid');
 
 async function loadPlaces() {
-  // Mostrar mensaje de carga mientras se obtienen los datos
   grid.innerHTML = '<p class="loading">Loading places...</p>';
 
   try {
@@ -70,14 +64,11 @@ async function loadPlaces() {
 }
 
 function buildCards(places) {
-  grid.innerHTML = ''; // Limpiar mensaje de carga
+  grid.innerHTML = '';
 
   places.forEach((place, index) => {
     const card = document.createElement('div');
     card.classList.add('place-card');
-    // Opcional: asignar grid area (si usas grid-template-areas)
-    // card.style.gridArea = `place${index + 1}`;
-
     card.innerHTML = `
       <h2>${escapeHtml(place.name)}</h2>
       <figure>
@@ -95,7 +86,6 @@ function buildCards(places) {
       <button class="learn-more-btn" type="button">Learn More</button>
     `;
 
-    // Agregar evento al botón para abrir el enlace externo
     const btn = card.querySelector('.learn-more-btn');
     btn.addEventListener('click', () => {
       window.open(place.link, '_blank', 'noopener,noreferrer');
@@ -105,7 +95,6 @@ function buildCards(places) {
   });
 }
 
-// Función simple para prevenir XSS (escapar caracteres HTML)
 function escapeHtml(str) {
   if (!str) return '';
   return str
@@ -116,5 +105,4 @@ function escapeHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
-// Iniciar carga de los lugares
 loadPlaces();

@@ -51,9 +51,9 @@
   .home-section.weather-section { grid-template-columns: 1fr 1fr; }
 }
 
-/* ============================================================
+/* 
    W05 – Discover Page (larger.css)
-   ============================================================ */
+*/
 
 /* Medium screen */
 @media (min-width: 641px) and (max-width: 1024px) {
