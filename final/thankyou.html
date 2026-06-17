@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup Enviada — Bolivia Startup Directory</title>
+  <meta name="description" content="Gracias por registrar tu startup en Bolivia Startup Directory." />
+  <meta name="author" content="Alex Anghyli" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo">Bolivia<span>Startups</span></a>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-menu" role="list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="directory.html">Directorio</a></li>
+          <li><a href="resources.html">Recursos</a></li>
+          <li><a href="directory.html">Favoritos <span class="fav-count">0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" style="padding:5rem 1.25rem;max-width:640px;margin:0 auto;text-align:center;">
+      <div style="font-size:4rem;margin-bottom:1.5rem;">🎉</div>
+      <h1 style="font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-0.5px;margin-bottom:1rem;">
+        ¡Startup enviada!
+      </h1>
+      <p style="color:var(--clr-muted);margin-bottom:2.5rem;font-size:0.95rem;line-height:1.7;">
+        Gracias por registrar tu startup. Revisaremos tu información y la incluiremos en el directorio pronto.
+      </p>
+
+      <div id="submitted-data" style="background:var(--clr-card);border:1px solid var(--clr-border);border-radius:var(--radius);padding:1.75rem;text-align:left;margin-bottom:2rem;">
+        <h2 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:1rem;color:var(--clr-accent);">
+          Datos recibidos:
+        </h2>
+        <dl id="data-list" style="display:grid;gap:0.75rem;"></dl>
+      </div>
+
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="directory.html" class="btn-primary">Ver directorio →</a>
+        <a href="resources.html" class="btn-ghost">Volver a recursos</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Bolivia<span>Startups</span></div>
+      <ul class="footer-links" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="directory.html">Directorio</a></li>
+        <li><a href="resources.html">Recursos</a></li>
+        <li><a href="attributions.html">Atribuciones</a></li>
+        <li><a href="https://youtu.be/DEMO" target="_blank" rel="noopener" rel="noreferrer">📹 Video Demo</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">© 2025 Bolivia Startup Directory · Desarrollado por Alex Anghyli · BYU-Pathway WDD231</p>
+  </footer>
+
+  <script type="module">
+    import { initNav } from './js/app.js';
+    initNav();
+
+    const params = new URLSearchParams(window.location.search);
+    const dataList = document.getElementById('data-list');
+    const labels = {
+      'startup-name': 'Nombre de la startup',
+      'founder-name': 'Founder',
+      'founder-email': 'Correo',
+      'industry': 'Industria',
+      'city': 'Ciudad',
+      'stage': 'Etapa',
+      'website': 'Sitio web',
+      'description': 'Descripción',
+    };
+
+    let html = '';
+    params.forEach((value, key) => {
+      if (value && labels[key]) {
+        html += `
+          <div style="display:grid;grid-template-columns:140px 1fr;gap:0.5rem;font-size:0.88rem;border-bottom:1px solid var(--clr-border);padding-bottom:0.6rem;">
+            <dt style="color:var(--clr-muted);font-weight:600;">${labels[key]}</dt>
+            <dd style="color:var(--clr-text);">${value}</dd>
+          </div>
+        `;
+      }
+    });
+
+    dataList.innerHTML = html || '<p style="color:var(--clr-muted);">No se recibieron datos.</p>';
+  </script>
+</body>
+</html>

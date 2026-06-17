@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recursos para Emprendedores — Bolivia Startup Directory</title>
+  <meta name="description" content="Guías, herramientas y recursos esenciales para founders y emprendedores bolivianos que quieren lanzar o escalar su startup." />
+  <meta name="author" content="Alex Anghyli" />
+
+  <meta property="og:title" content="Recursos para Emprendedores Bolivianos" />
+  <meta property="og:description" content="Todo lo que necesitas para lanzar o crecer tu startup en Bolivia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexhombrejoven23.github.io/wdd231/final/resources.html" />
+  <meta property="og:image" content="images/og-image.png" />
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo">Bolivia<span>Startups</span></a>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-menu" role="list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="directory.html">Directorio</a></li>
+          <li><a href="resources.html">Recursos</a></li>
+          <li><a href="directory.html">Favoritos <span class="fav-count" aria-label="favoritos guardados">0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="resources-hero container">
+      <div class="hero-eyebrow">Para founders bolivianos</div>
+      <h1>Recursos esenciales</h1>
+      <p style="color:var(--clr-muted);margin-top:0.5rem;max-width:52ch;">
+        Todo lo que necesitas para lanzar, validar y escalar tu startup en Bolivia.
+      </p>
+    </div>
+
+    <section class="container" aria-labelledby="recursos-heading">
+      <h2 class="section-title" id="recursos-heading" style="margin-bottom:1.5rem;">Guías y herramientas</h2>
+      <div class="resources-grid">
+
+        <div class="resource-card">
+          <h3>🏛️ Registro legal</h3>
+          <ul>
+            <li>FUNDEMPRESA — Registro de Comercio de Bolivia</li>
+            <li>SIN — Servicio de Impuestos Nacionales (NIT)</li>
+            <li>SEPREC — Registro de personas jurídicas</li>
+            <li>Cámara de Industria y Comercio de tu ciudad</li>
+            <li>Ministerio de Desarrollo Productivo</li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>💰 Financiamiento</h3>
+          <ul>
+            <li>PRODEM — Financiamiento para microempresas</li>
+            <li>BDP — Banco de Desarrollo Productivo</li>
+            <li>FINPYME Bolivia — Fondo para PYMES</li>
+            <li>Angels de Bolivia — Red de inversores ángeles</li>
+            <li>StartUp Bolivia — Concursos de capital semilla</li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🧠 Ecosistema y comunidad</h3>
+          <ul>
+            <li>StartUp Bolivia — Aceleradora del gobierno</li>
+            <li>Impact Hub La Paz — Co-working y comunidad</li>
+            <li>Bolivia Tech Hub — Comunidad tech boliviana</li>
+            <li>ASFI — Asociación de Fintech Bolivia</li>
+            <li>Red de Mujeres Emprendedoras de Bolivia</li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>📖 Formación y mentores</h3>
+          <ul>
+            <li>BYU-Pathway Worldwide — Educación tech accesible</li>
+            <li>Google for Startups — Recursos y mentoría gratuita</li>
+            <li>MIT Entrepreneurship — Cursos online gratuitos</li>
+            <li>Y Combinator Startup School — Programa gratuito</li>
+            <li>Coursera — Emprendimiento en Latinoamérica</li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🛠️ Herramientas recomendadas</h3>
+          <ul>
+            <li>Notion — Gestión de proyecto y documentación</li>
+            <li>Figma — Diseño de producto y prototipado</li>
+            <li>Stripe Atlas — Constitución de empresa global</li>
+            <li>Airtable — Base de datos para operaciones</li>
+            <li>GitHub — Control de versiones y código</li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>📊 Lecturas clave</h3>
+          <ul>
+            <li>The Lean Startup — Eric Ries</li>
+            <li>Zero to One — Peter Thiel</li>
+            <li>The Mom Test — Rob Fitzpatrick</li>
+            <li>Blitzscaling — Reid Hoffman</li>
+            <li>Built to Last — Collins & Porras</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-heading">
+      <h2 id="form-heading">Registra tu startup</h2>
+      <p>¿Tienes una startup boliviana? Envíala para incluirla en el directorio.</p>
+
+      <form id="register-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="startup-name">Nombre de la startup *</label>
+            <input type="text" id="startup-name" name="startup-name" placeholder="Ej: Mi Startup BO" required autocomplete="organization" />
+          </div>
+          <div class="form-group">
+            <label for="founder-name">Tu nombre *</label>
+            <input type="text" id="founder-name" name="founder-name" placeholder="Ej: Ana Mamani" required autocomplete="name" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="founder-email">Correo electrónico *</label>
+            <input type="email" id="founder-email" name="founder-email" placeholder="ana@mistartup.bo" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="industry">Industria *</label>
+            <select id="industry" name="industry" required>
+              <option value="">Selecciona una industria</option>
+              <option>Fintech</option>
+              <option>EdTech</option>
+              <option>HealthTech</option>
+              <option>AgriTech</option>
+              <option>CleanTech</option>
+              <option>Logística</option>
+              <option>E-commerce</option>
+              <option>Blockchain</option>
+              <option>Otra</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">Ciudad *</label>
+            <select id="city" name="city" required>
+              <option value="">Selecciona tu ciudad</option>
+              <option>La Paz</option>
+              <option>Santa Cruz</option>
+              <option>Cochabamba</option>
+              <option>Potosí</option>
+              <option>Oruro</option>
+              <option>El Alto</option>
+              <option>Sucre</option>
+              <option>Trinidad</option>
+              <option>Otra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stage">Etapa *</label>
+            <select id="stage" name="stage" required>
+              <option value="">Etapa actual</option>
+              <option>Pre-Seed</option>
+              <option>Seed</option>
+              <option>Series A</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="website">Sitio web</label>
+          <input type="url" id="website" name="website" placeholder="https://mistartup.bo" autocomplete="url" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descripción breve *</label>
+          <textarea id="description" name="description" placeholder="Describe qué hace tu startup y a quién ayuda (máx. 200 caracteres)..." maxlength="200" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:0.5rem;">
+          Enviar startup →
+        </button>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Bolivia<span>Startups</span></div>
+      <ul class="footer-links" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="directory.html">Directorio</a></li>
+        <li><a href="resources.html">Recursos</a></li>
+        <li><a href="attributions.html">Atribuciones</a></li>
+        <li><a href="https://youtu.be/DEMO" target="_blank" rel="noopener noreferrer">📹 Video Demo</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">© 2025 Bolivia Startup Directory · Desarrollado por Alex Anghyli · BYU-Pathway WDD231</p>
+  </footer>
+
+  <script type="module" src="js/resources.js"></script>
+</body>
+</html>

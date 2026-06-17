@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Directorio de Startups — Bolivia Startup Directory</title>
+  <meta name="description" content="Encuentra y filtra todas las startups bolivianas por industria, ciudad y etapa. Más de 16 emprendimientos documentados." />
+  <meta name="author" content="Alex Anghyli" />
+
+  <meta property="og:title" content="Directorio de Startups Bolivianas" />
+  <meta property="og:description" content="Explora el ecosistema emprendedor de Bolivia: fintech, edtech, agritech y más." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexhombrejoven23.github.io/wdd231/final/directory.html" />
+  <meta property="og:image" content="images/og-image.png" />
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo">Bolivia<span>Startups</span></a>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-menu" role="list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="directory.html">Directorio</a></li>
+          <li><a href="resources.html">Recursos</a></li>
+          <li><a href="directory.html">Favoritos <span class="fav-count" aria-label="favoritos guardados">0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="dir-header">
+      <div class="hero-eyebrow">16+ startups documentadas</div>
+      <h1>Directorio completo</h1>
+      <p style="color:var(--clr-muted);font-size:0.95rem;margin-top:0.5rem;">
+        Busca, filtra y guarda tus startups bolivianas favoritas.
+      </p>
+
+      <div class="search-filter-bar" role="search">
+        <label for="search-input" class="sr-only">Buscar startups</label>
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="🔍  Busca por nombre, ciudad o etiqueta..."
+          aria-label="Buscar startups"
+        />
+
+        <label for="filter-industry" class="sr-only">Filtrar por industria</label>
+        <select id="filter-industry" class="filter-select" aria-label="Filtrar por industria">
+          <option value="all">Todas las industrias</option>
+          <option value="Fintech">Fintech</option>
+          <option value="EdTech">EdTech</option>
+          <option value="HealthTech">HealthTech</option>
+          <option value="AgriTech">AgriTech</option>
+          <option value="CleanTech">CleanTech</option>
+          <option value="Logística">Logística</option>
+          <option value="E-commerce">E-commerce</option>
+          <option value="Blockchain">Blockchain</option>
+          <option value="LegalTech">LegalTech</option>
+          <option value="TravelTech">TravelTech</option>
+          <option value="PropTech">PropTech</option>
+          <option value="FoodTech">FoodTech</option>
+          <option value="HRTech">HRTech</option>
+        </select>
+
+        <label for="sort-select" class="sr-only">Ordenar por</label>
+        <select id="sort-select" class="filter-select" aria-label="Ordenar resultados">
+          <option value="name">A–Z Nombre</option>
+          <option value="founded">Más recientes</option>
+          <option value="employees">Mayor equipo</option>
+        </select>
+      </div>
+
+      <p class="results-count" id="results-count" aria-live="polite">Cargando...</p>
+    </div>
+
+    <div id="startups-grid" aria-live="polite" aria-label="Listado de startups">
+      <p style="color:var(--clr-muted);font-size:0.9rem;padding:2rem 1.25rem;">Cargando startups...</p>
+    </div>
+  </main>
+
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true">
+    <div class="modal">
+      <button id="modal-close" class="modal-close" aria-label="Cerrar">✕</button>
+      <div id="modal-logo" class="modal-logo" aria-hidden="true"></div>
+      <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.25rem;">
+        <h2 id="modal-name" class="modal-name"></h2>
+        <span id="modal-stage-badge" class="stage-badge"></span>
+      </div>
+      <p id="modal-industry" class="modal-industry"></p>
+      <div class="modal-grid">
+        <div class="modal-stat">
+          <div class="modal-stat-label">Fundada</div>
+          <div id="modal-founded" class="modal-stat-value"></div>
+        </div>
+        <div class="modal-stat">
+          <div class="modal-stat-label">Empleados</div>
+          <div id="modal-employees" class="modal-stat-value"></div>
+        </div>
+        <div class="modal-stat">
+          <div class="modal-stat-label">Etapa</div>
+          <div id="modal-stage" class="modal-stat-value"></div>
+        </div>
+        <div class="modal-stat">
+          <div class="modal-stat-label">Ciudad</div>
+          <div id="modal-city" class="modal-stat-value"></div>
+        </div>
+      </div>
+      <p id="modal-desc" class="modal-desc"></p>
+      <div id="modal-tags" class="modal-tags"></div>
+      <div class="modal-actions">
+        <a id="modal-visit" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:0.85rem;">Visitar sitio web →</a>
+        <button id="modal-fav-btn" class="favorite-btn">🤍 Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Bolivia<span>Startups</span></div>
+      <ul class="footer-links" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="directory.html">Directorio</a></li>
+        <li><a href="resources.html">Recursos</a></li>
+        <li><a href="attributions.html">Atribuciones</a></li>
+        <li><a href="https://youtu.be/DEMO" target="_blank" rel="noopener noreferrer">📹 Video Demo</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">© 2025 Bolivia Startup Directory · Desarrollado por Alex Anghyli · BYU-Pathway WDD231</p>
+  </footer>
+
+  <script type="module" src="js/directory.js"></script>
+</body>
+</html>
