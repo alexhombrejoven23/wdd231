@@ -1,19 +1,13 @@
-/* =========================================
-   Bolivia Startup Directory — styles.css
-   Design tokens: Andean palette + modern type
-   ========================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
-/* --- Tokens --- */
 :root {
   --clr-bg: #0d0d0d;
   --clr-surface: #161616;
   --clr-card: #1e1e1e;
   --clr-border: #2a2a2a;
-  --clr-accent: #f5a623;      /* Andean gold */
-  --clr-accent2: #e84040;     /* Wiphala red */
-  --clr-accent3: #3ecf8e;     /* Tech green */
+  --clr-accent: #f5a623;      
+  --clr-accent2: #e84040;     
+  --clr-accent3: #3ecf8e;    
   --clr-text: #f0ede8;
   --clr-muted: #888;
   --clr-tag-bg: #252525;
@@ -139,7 +133,6 @@ nav a[aria-current="page"] {
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* --- Main --- */
 main { flex: 1; }
 
 .container {
@@ -148,7 +141,7 @@ main { flex: 1; }
   padding: 0 1.25rem;
 }
 
-/* --- Hero (index) --- */
+/*  Hero (index)  */
 .hero {
   padding: 5rem 1.25rem 4rem;
   max-width: 1200px;
@@ -410,7 +403,6 @@ main { flex: 1; }
   margin-top: 0.25rem;
 }
 
-/* Industries section */
 .industries-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -440,7 +432,7 @@ main { flex: 1; }
 
 .industry-chip .icon { font-size: 1.5rem; display: block; margin-bottom: 0.4rem; }
 
-/* --- Directory page --- */
+/* Directory page  */
 .dir-header {
   padding: 3rem 1.25rem 2rem;
   max-width: 1200px;
@@ -641,7 +633,7 @@ main { flex: 1; }
   background: rgba(232,64,64,0.08);
 }
 
-/* --- Resources page --- */
+/* Resources page  */
 .resources-hero {
   padding: 3.5rem 1.25rem 2rem;
   max-width: 1200px;
@@ -755,7 +747,6 @@ main { flex: 1; }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-/* --- Footer --- */
 footer {
   background: var(--clr-surface);
   border-top: 1px solid var(--clr-border);
@@ -844,7 +835,7 @@ footer {
 .toast.success { border-left: 3px solid var(--clr-accent3); }
 .toast.info { border-left: 3px solid var(--clr-accent); }
 
-/* --- Responsive --- */
+/*  Responsive  */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
 
