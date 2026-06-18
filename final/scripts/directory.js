@@ -1,4 +1,3 @@
-// directory.js — ES Module: full startup directory with filter/search
 import { initNav, buildCardHTML, showToast, updateFavCount } from './app.js';
 import { openModal, initModal } from './modal.js';
 import { getPrefs, savePrefs } from './storage.js';

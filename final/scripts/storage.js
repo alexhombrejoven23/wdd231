@@ -1,4 +1,3 @@
-
 const FAVS_KEY = 'bsd_favorites';
 const PREFS_KEY = 'bsd_prefs';
 

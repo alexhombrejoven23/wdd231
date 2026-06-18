@@ -1,4 +1,3 @@
-// app.js — ES Module: shared utilities across all pages
 import { getFavorites, toggleFavorite } from './storage.js';
 
 export function initNav() {

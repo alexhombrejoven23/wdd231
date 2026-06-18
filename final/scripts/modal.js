@@ -1,4 +1,3 @@
-// modal.js — ES Module: modal dialog management
 import { toggleFavorite, isFavorite } from './storage.js';
 import { updateFavCount, showToast, getStageBadgeClass } from './app.js';
 
