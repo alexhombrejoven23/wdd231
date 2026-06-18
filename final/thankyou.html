@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Startup Enviada — Bolivia Startup Directory</title>
   <meta name="description" content="Gracias por registrar tu startup en Bolivia Startup Directory." />
-  <meta name="author" content="Alex Anghyli" />
+  <meta name="author" content="Alex Condori" />
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
 
   <header>
@@ -31,15 +38,18 @@
   <main>
     <section class="container" style="padding:5rem 1.25rem;max-width:640px;margin:0 auto;text-align:center;">
       <div style="font-size:4rem;margin-bottom:1.5rem;">🎉</div>
-      <h1 style="font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-0.5px;margin-bottom:1rem;">
+      <h1
+        style="font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-0.5px;margin-bottom:1rem;">
         ¡Startup enviada!
       </h1>
       <p style="color:var(--clr-muted);margin-bottom:2.5rem;font-size:0.95rem;line-height:1.7;">
         Gracias por registrar tu startup. Revisaremos tu información y la incluiremos en el directorio pronto.
       </p>
 
-      <div id="submitted-data" style="background:var(--clr-card);border:1px solid var(--clr-border);border-radius:var(--radius);padding:1.75rem;text-align:left;margin-bottom:2rem;">
-        <h2 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:1rem;color:var(--clr-accent);">
+      <div id="submitted-data"
+        style="background:var(--clr-card);border:1px solid var(--clr-border);border-radius:var(--radius);padding:1.75rem;text-align:left;margin-bottom:2rem;">
+        <h2
+          style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:1rem;color:var(--clr-accent);">
           Datos recibidos:
         </h2>
         <dl id="data-list" style="display:grid;gap:0.75rem;"></dl>
@@ -98,4 +108,5 @@
     dataList.innerHTML = html || '<p style="color:var(--clr-muted);">No se recibieron datos.</p>';
   </script>
 </body>
+
 </html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recursos para Emprendedores — Bolivia Startup Directory</title>
-  <meta name="description" content="Guías, herramientas y recursos esenciales para founders y emprendedores bolivianos que quieren lanzar o escalar su startup." />
-  <meta name="author" content="Alex Anghyli" />
+  <meta name="description"
+    content="Guías, herramientas y recursos esenciales para founders y emprendedores bolivianos que quieren lanzar o escalar su startup." />
+  <meta name="author" content="Alex Condori" />
 
   <meta property="og:title" content="Recursos para Emprendedores Bolivianos" />
   <meta property="og:description" content="Todo lo que necesitas para lanzar o crecer tu startup en Bolivia." />
@@ -14,8 +16,14 @@
   <meta property="og:image" content="https://alexhombrejoven23.github.io/wdd231/final/images/favicon.svg" />
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
 
   <header>
@@ -29,7 +37,8 @@
           <li><a href="index.html">Inicio</a></li>
           <li><a href="directory.html">Directorio</a></li>
           <li><a href="resources.html">Recursos</a></li>
-          <li><a href="directory.html">Favoritos <span class="fav-count" aria-label="favoritos guardados">0</span></a></li>
+          <li><a href="directory.html">Favoritos <span class="fav-count" aria-label="favoritos guardados">0</span></a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -125,18 +134,21 @@
         <div class="form-row">
           <div class="form-group">
             <label for="startup-name">Nombre de la startup *</label>
-            <input type="text" id="startup-name" name="startup-name" placeholder="Ej: Mi Startup BO" required autocomplete="organization" />
+            <input type="text" id="startup-name" name="startup-name" placeholder="Ej: Mi Startup BO" required
+              autocomplete="organization" />
           </div>
           <div class="form-group">
             <label for="founder-name">Tu nombre *</label>
-            <input type="text" id="founder-name" name="founder-name" placeholder="Ej: Ana Mamani" required autocomplete="name" />
+            <input type="text" id="founder-name" name="founder-name" placeholder="Ej: Ana Mamani" required
+              autocomplete="name" />
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="founder-email">Correo electrónico *</label>
-            <input type="email" id="founder-email" name="founder-email" placeholder="ana@mistartup.bo" required autocomplete="email" />
+            <input type="email" id="founder-email" name="founder-email" placeholder="ana@mistartup.bo" required
+              autocomplete="email" />
           </div>
           <div class="form-group">
             <label for="industry">Industria *</label>
@@ -189,7 +201,9 @@
 
         <div class="form-group">
           <label for="description">Descripción breve *</label>
-          <textarea id="description" name="description" placeholder="Describe qué hace tu startup y a quién ayuda (máx. 200 caracteres)..." maxlength="200" required></textarea>
+          <textarea id="description" name="description"
+            placeholder="Describe qué hace tu startup y a quién ayuda (máx. 200 caracteres)..." maxlength="200"
+            required></textarea>
         </div>
 
         <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:0.5rem;">
@@ -198,7 +212,7 @@
       </form>
     </section>
   </main>
-  
+
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">Bolivia<span>Startups</span></div>
@@ -215,4 +229,5 @@
 
   <script type="module" src="js/resources.js"></script>
 </body>
+
 </html>

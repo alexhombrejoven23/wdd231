@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Directorio de Startups — Bolivia Startup Directory</title>
-  <meta name="description" content="Encuentra y filtra todas las startups bolivianas por industria, ciudad y etapa. Más de 16 emprendimientos documentados." />
-  <meta name="author" content="Alex Anghyli" />
+  <meta name="description"
+    content="Encuentra y filtra todas las startups bolivianas por industria, ciudad y etapa. Más de 16 emprendimientos documentados." />
+  <meta name="author" content="Alex Condori" />
 
   <meta property="og:title" content="Directorio de Startups Bolivianas" />
-  <meta property="og:description" content="Explora el ecosistema emprendedor de Bolivia: fintech, edtech, agritech y más." />
+  <meta property="og:description"
+    content="Explora el ecosistema emprendedor de Bolivia: fintech, edtech, agritech y más." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alexhombrejoven23.github.io/wdd231/final/directory.html" />
-<meta property="og:image" content="https://alexhombrejoven23.github.io/wdd231/final/images/favicon.svg" />
+  <meta property="og:image" content="https://alexhombrejoven23.github.io/wdd231/final/images/favicon.svg" />
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
+
 </head>
+
 <body>
 
   <header>
@@ -29,7 +39,8 @@
           <li><a href="index.html">Inicio</a></li>
           <li><a href="directory.html">Directorio</a></li>
           <li><a href="resources.html">Recursos</a></li>
-          <li><a href="directory.html">Favoritos <span class="fav-count" aria-label="favoritos guardados">0</span></a></li>
+          <li><a href="directory.html">Favoritos <span class="fav-count" aria-label="favoritos guardados">0</span></a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -45,13 +56,8 @@
 
       <div class="search-filter-bar" role="search">
         <label for="search-input" class="sr-only">Buscar startups</label>
-        <input
-          type="search"
-          id="search-input"
-          class="search-input"
-          placeholder="🔍  Busca por nombre, ciudad o etiqueta..."
-          aria-label="Buscar startups"
-        />
+        <input type="search" id="search-input" class="search-input"
+          placeholder="🔍  Busca por nombre, ciudad o etiqueta..." aria-label="Buscar startups" />
 
         <label for="filter-industry" class="sr-only">Filtrar por industria</label>
         <select id="filter-industry" class="filter-select" aria-label="Filtrar por industria">
@@ -87,7 +93,8 @@
     </div>
   </main>
 
-  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-name" aria-hidden="true">
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-name"
+    aria-hidden="true">
     <div class="modal">
       <button id="modal-close" class="modal-close" aria-label="Cerrar">✕</button>
       <div id="modal-logo" class="modal-logo" aria-hidden="true"></div>
@@ -117,7 +124,8 @@
       <p id="modal-desc" class="modal-desc"></p>
       <div id="modal-tags" class="modal-tags"></div>
       <div class="modal-actions">
-        <a id="modal-visit" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:0.85rem;">Visitar sitio web →</a>
+        <a id="modal-visit" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"
+          style="font-size:0.85rem;">Visitar sitio web →</a>
         <button id="modal-fav-btn" class="favorite-btn">🤍 Guardar</button>
       </div>
     </div>
@@ -139,4 +147,5 @@
 
   <script type="module" src="js/directory.js"></script>
 </body>
+
 </html>

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
-
 :root {
   --clr-bg: #0d0d0d;
   --clr-surface: #161616;
@@ -873,4 +871,14 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+.btn-small {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+.loading-text {
+  color: var(--clr-muted);
+  font-size: 0.9rem;
 }
